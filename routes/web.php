@@ -12,3 +12,9 @@
 */
 
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::prefix('admin')
+    ->namespace('Admin')
+    ->group(function() {
+        Route::get('/', 'DashboardController@index')->name('dasboard');
+});
